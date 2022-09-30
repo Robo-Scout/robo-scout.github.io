@@ -15,9 +15,8 @@ fs.readFile(__dirname + '/public/teams/view/index.html', 'utf8', function(
 const apiKey = process.env['api_key'];
 
 const app = express();
-const httpserver = http.Server(app);
-
-httpserver.listen(3000);
+app.listen(3000, 
+	() => console.log("Server is running..."));
 
 app.get('/', function(req, res) {
   res.redirect('/home');
