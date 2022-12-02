@@ -19,5 +19,8 @@
   "license": "ISC",
   "scripts": {
     "start": "node index.js"
-  }
+  },
+  "engines": {
+    "node": "14.20.1"
+}
 }

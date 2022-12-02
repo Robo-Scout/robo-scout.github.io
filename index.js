@@ -26,7 +26,7 @@ fs.readFile(__dirname + '/public/teams/skills/index.html', 'utf8', function(
 });
 
 const app = express();
-app.listen(3000, 
+app.listen(process.env.PORT || 3000, 
 	() => console.log("Server is running..."));
 
 app.get('/', function(req, res) {
