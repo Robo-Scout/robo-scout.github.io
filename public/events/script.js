@@ -5,7 +5,10 @@ let fader = null;
 loadEvents(1)
 
 function loadEvents(page) {
-  if(fader) fader.style.opacity = 0.5;
+  if(fader){
+    fader.style.opacity = 0.5;
+    fader.style.height = 'calc(85% - 222px)';
+  }
   
   loaded = false;
   //Make http request to server
@@ -41,8 +44,8 @@ function loadEvents(page) {
     `;
       for (i = 0; i < result.data.length; i++) {
         html += `<tr>
-      <td>${result.data[i].name}</td>
-      <td>${result.data[i].program.code}</td>
+      <td><a href='/events/${result.data[i].id}'>${result.data[i].name}</a></td>
+      <td><a href='/programs/${result.data[i].program.code}'>${result.data[i].program.code}</a></td>
       <td>${new Date(result.data[i].start).toLocaleDateString('en-us', {year:"numeric", month:"short", day:"numeric"})}</td>
       </tr>`
       }
@@ -51,9 +54,11 @@ function loadEvents(page) {
       teamId = result.id;
       if(fader){
         fader.style.opacity = 0;
+        setTimeout(function(){fader.style.height = '0px';}, 1000)
       } else {
         fader = document.getElementById('fader');
-        fader.style.transition = '1s';
+        fader.style.transition = 'opacity 1s';
+        fader.style.height = '0px';
       }
     }
   }

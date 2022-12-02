@@ -30,6 +30,9 @@ Http.onreadystatechange = (e) => {
     } else {
       html += '</ul>'
     }
+    if(!result.data){
+      html = '<h2>Uh oh! It looks like we encountered an error. Please try again later.</h2>'
+    }
     resultsDisplay.innerHTML = html;
   }
 }

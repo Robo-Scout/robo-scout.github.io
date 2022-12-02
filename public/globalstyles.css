@@ -4,6 +4,17 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
   background-color: #f5f3f3;
+  overscroll-behavior-y: none;
+}
+
+a {
+  color: #3399FF;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1d74cb;
+  text-decoration: underline;
 }
 
   /* width */
@@ -94,6 +105,7 @@ nav a:hover {
   color: #3399FF;
   border-color: #3399FF;
   transition: 0.2s;
+  text-decoration: none;
 }
 
 nav a.logo:hover {

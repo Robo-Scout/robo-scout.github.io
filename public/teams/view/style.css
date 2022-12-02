@@ -32,7 +32,7 @@ content {
 content block {
   background-color: #e9e6e6;
   width: 48%;
-  height: 200px;
+  height: auto;
   margin-bottom: 2%;
 }
 
@@ -49,7 +49,7 @@ content block top {
 }
 
 content block block-main {
-  height: 160px;
+  height: auto;
   width: 100%;
   display: block;
   overflow: auto;
@@ -110,4 +110,10 @@ content block top p {
     100%{
         background-position: 468px 0
     }
+}
+
+.table-label {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
 }

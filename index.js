@@ -3,6 +3,10 @@ const express = require('express');
 const axios = require('axios');
 const fs = require('fs');
 
+require('dotenv').config();
+
+const apiKey = process.env.API_KEY;
+
 let teamPage = '';
 fs.readFile(__dirname + '/public/teams/view/index.html', 'utf8', function(
   err,
@@ -12,7 +16,14 @@ fs.readFile(__dirname + '/public/teams/view/index.html', 'utf8', function(
   teamPage = data;
 });
 
-const apiKey = process.env['api_key'];
+let skillsPage = '';
+fs.readFile(__dirname + '/public/teams/skills/index.html', 'utf8', function(
+  err,
+  data
+) {
+  if (err) throw err;
+  skillsPage = data;
+});
 
 const app = express();
 app.listen(3000, 
@@ -54,6 +65,14 @@ app.get('/get/*', function(req, response) {
     });
 });
 
+app.get('/teams/skills/script.js', function(req, res) {
+  res.sendFile(__dirname + '/public/teams/skills/script.js');
+});
+
+app.get('/teams/skills/style.css', function(req, res) {
+  res.sendFile(__dirname + '/public/teams/skills/style.css');
+});
+
 app.get('/teams/view/script.js', function(req, res) {
   res.sendFile(__dirname + '/public/teams/view/script.js');
 });
@@ -79,8 +98,14 @@ app.get('/teams', function(req, res) {
 });
 
 app.get('/teams/*', function(req, res) {
-  const query = req.url.slice(7);
-  res.send(teamPage.replace(/{team-number}/g, query));
+  if(req.url.split("/").pop() == 'skills'){
+    let querys = req.url.split("/");
+    const query = querys[querys.length - 2];
+    res.send(skillsPage.replace(/{team-number}/g, query));
+  } else {
+    const query = req.url.slice(7);
+    res.send(teamPage.replace(/{team-number}/g, query));
+  }
 });
 
 app.use(express.static('public'));
@@ -88,8 +113,6 @@ app.use(express.static('public'));
 app.use(function(req, res, next) {
   res.status(404).sendFile(__dirname + '/public/error404/index.html');
 });
-
-console.log('Server is online!');
 
 
 

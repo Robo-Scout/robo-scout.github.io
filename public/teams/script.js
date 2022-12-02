@@ -72,10 +72,10 @@ function loadTeams(page) {
       teamId = result.id;
       if(fader){
         fader.style.opacity = 0;
-        fader.style.height = '0px';
+        setTimeout(function(){fader.style.height = '0px';}, 1000)
       } else {
         fader = document.getElementById('fader');
-        fader.style.transition = '1s';
+        fader.style.transition = 'opacity 1s';
         fader.style.height = '0px';
       }
     }

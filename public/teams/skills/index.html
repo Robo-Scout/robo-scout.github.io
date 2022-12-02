@@ -1,12 +1,20 @@
-<!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>{team-number} - Robo Scout</title>
-  <link href="/teams/view/style.css" rel="stylesheet" type="text/css" />
+  <title>{team-number} Skills - RoboScout</title>
+  <link href="/teams/skills/style.css" rel="stylesheet" type="text/css" />
   <link href="/globalstyles.css" rel="stylesheet" type="text/css" />
+
+  <!-- Meta Tags -->
+  <meta name="title" content="VEX Events - RoboScout">
+  <meta name="description" content="Find current and past VEX events and view scores, rankings, and more!">
+  <meta name="keywords" content="VEX, scores, rankings, robotics, competitions, events, skills, VRC, IQ">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+
 
   <!-- Favicon and Icons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -16,7 +24,6 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#3399ff">
 <meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="theme-color" content="#ffffff">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -36,97 +43,23 @@
 </svg>
       <p>Robo Scout</p></a>
     <a href="/home">Home</a>
-    <a href="/teams" class='active'>Teams</a>
-    <a href="/events">Events</a>
+    <a href="/teams">Teams</a>
+    <a href="/events" class='active'>Events</a>
   <a href="/seasons">Seasons</a>
     <div id='search'><input type='text' placeholder='Search' id='navSearch'><span class="focus-border"></span></div>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class='icon'><defs><style>.cls-1{fill:#000000;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M63.22,59.45,47.3,43.53a26.7,26.7,0,1,0-3.77,3.77L59.45,63.22a2.67,2.67,0,0,0,3.77-3.77ZM26.67,48A21.34,21.34,0,1,1,48,26.67,21.36,21.36,0,0,1,26.67,48Z"/></g></g></svg>
-    <a href="javascript:void(0);" class="icon bars" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
   </nav>
   <main>
     <header>
-      <h1 id="h1">{team-number}</h1>
+      <h1 id="h1">{team-number} Skills</h1>
     </header>
-    <content>
-      <block>
-        <top><p>Info</p></top>
-        <block-main>
-          <table id="block1table">
-            <tr>
-              <th><span class='table-loader'></span></th>
-              <td><span class='table-loader'></span></td>
-            </tr>
-            <tr>
-              <th><span class='table-loader'></span></th>
-              <td><span class='table-loader'></span></td>
-            </tr>
-            <tr>
-              <th><span class='table-loader'></span></th>
-              <td><span class='table-loader'></span></td>
-            </tr>
-            <tr>
-              <th><span class='table-loader'></span></th>
-              <td><span class='table-loader'></span></td>
-            </tr>
-          </table>
-        </block-main>
-      </block>
-      <block>
-        <top><p>Skills</p></top>
-        <block-main id="block2-main">
-          <table id='block2table'>
-            <tr>
-              <th><span class='table-loader'></span></th>
-              <td><span class='table-loader'></span></td>
-            </tr>
-            <tr>
-              <th><span class='table-loader'></span></th>
-              <td><span class='table-loader'></span></td>
-            </tr>
-            <tr>
-              <th><span class='table-loader'></span></th>
-              <td><span class='table-loader'></span></td>
-            </tr>
-            <tr>
-              <th><span class='table-loader'></span></th>
-              <td><span class='table-loader'></span></td>
-            </tr>
-          </table>
-        </block-main>
-      </block>
-      <block>
-        <top><p>Matches</p></top>
-        <block-main>
-          <table>
-            <tr>
-              <th><span class='table-loader'></span></th>
-              <td><span class='table-loader'></span></td>
-              <td><span class='table-loader'></span></td>
-            </tr>
-            <tr>
-              <th><span class='table-loader'></span></th>
-              <td><span class='table-loader'></span></td>
-              <td><span class='table-loader'></span></td>
-            </tr>
-            <tr>
-              <th><span class='table-loader'></span></th>
-              <td><span class='table-loader'></span></td>
-              <td><span class='table-loader'></span></td>
-            </tr>
-            <tr>
-              <th><span class='table-loader'></span></th>
-              <td><span class='table-loader'></span></td>
-              <td><span class='table-loader'></span></td>
-            </tr>
-          </table>
-        </block-main>
-      </block>
-    </content>
+    <div id='fader'></div>
+    <results id="results">
+      <div class="loader"></div>
+    </results>
   </main>
   <footer><p class="center">©2022 Luke McCrea</p></footer>
-  <script src="/teams/view/script.js"></script>
+  <script src="/teams/skills/script.js"></script>
   </script>
 </body>
 
