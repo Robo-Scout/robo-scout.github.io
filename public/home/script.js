@@ -19,3 +19,12 @@ navSearch.addEventListener('keydown', function(e) {
 		search(navSearch);
 	}
 });
+
+function pop(ele){
+	console.log('Pop!')
+	ele.classList.add('pop')
+	ele.addEventListener('animationiteration', (event) => {
+		console.log('un-pop')
+		ele.classList.remove('pop')
+	});
+}

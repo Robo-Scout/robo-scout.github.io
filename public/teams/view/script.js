@@ -13,7 +13,7 @@ Http2.onreadystatechange = (e) => {
     loaded2 = true;
     console.log(Http2.responseText);
     result = JSON.parse(Http2.responseText);
-    getSkills(result.data[0].id)
+    getSkills(result.data[0].id);
     document.getElementById('block1table').innerHTML = `
       <tbody>
         <tr>
@@ -54,6 +54,7 @@ Http2.onreadystatechange = (e) => {
 
     Http.onreadystatechange = (e) => {
       if (!loaded && Http.responseText) {
+        getMatches(id);
         loaded = true;
         console.log(Http.responseText);
         result = JSON.parse(Http.responseText);
@@ -66,8 +67,8 @@ Http2.onreadystatechange = (e) => {
           <th>Score</th>
         </tr>
         `;
-        
-        for(i=0; i<result.data.length; i++){
+
+        for (i = 0; i < result.data.length; i++) {
           html += `
         <tr>
           <td><a href='/events/${result.data[i].event.id}'>${result.data[i].event.name}</a></td>
@@ -87,15 +88,54 @@ Http2.onreadystatechange = (e) => {
 //Nav Search
 const navSearch = document.getElementById('navSearch');
 
-navSearch.addEventListener('keydown', function(e) {
-	if (e.key === 'Enter') {
-		search(navSearch);
-	}
+navSearch.addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') {
+    search(navSearch);
+  }
 });
 
 function search(i) {
-	let query = i.value;
-	if (query.trim().length != 0) {
-		window.location.href = '/search/' + encodeURIComponent(query);
-	}
+  let query = i.value;
+  if (query.trim().length != 0) {
+    window.location.href = '/search/' + encodeURIComponent(query);
+  }
+}
+
+function getMatches(id) {
+  //Make http request to server
+  const Http3 = new XMLHttpRequest();
+  const url3 = `/get/teams/${id}/matches?per_page=5`;
+  Http3.open("GET", url3);
+  Http3.send();
+  let loaded3 = false;
+
+  Http3.onreadystatechange = (e) => {
+    if (!loaded3 && Http3.responseText) {
+      loaded3 = true;
+      console.log(Http3.responseText);
+      result3 = JSON.parse(Http3.responseText);
+      let html3 = `
+    <tbody>
+      <tr>
+        <th>Event</th>
+        <th>Season</th>
+        <th>Type</th>
+        <th>Score</th>
+      </tr>
+      `;
+
+      for (i = 0; i < result3.data.length; i++) {
+        html3 += `
+      <tr>
+        <td><a href='/events/${result3.data[i].event.id}'>${result3.data[i].event.name}</a></td>
+        <td><a href='/seasons/${result3.data[i].season.id}'>${result3.data[i].season.name}</a></td>
+        <td>${result3.data[i].type}</td>
+        <td>${result3.data[i].score}</td>
+      </tr>`
+      }
+      html3 += `</tbody>`
+      document.getElementById('block3table').innerHTML = html3;
+      document.getElementById('block3-main').innerHTML += `<div class='table-label'><a href='${query}/skills'>View All</a></div>`
+    }
+  }
 }

@@ -47,7 +47,8 @@ nav {
 }
 
 main {
-  min-height: calc(100vh - (50px + 3rem));
+  min-height: calc(100vh - (52px + 3rem));
+  position: relative;
 }
 
 footer {
