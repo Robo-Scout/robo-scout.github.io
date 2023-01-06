@@ -1,0 +1,178 @@
+main {
+  margin-top: 0px;
+  position: relative;
+}
+
+header {
+  padding: 30px;
+  text-align: center;
+  display: block;
+}
+
+h1 {
+  color: white;
+  font-size: 50px;
+  line-height: 100px;
+  margin: auto;
+  text-align: center;
+  background-color: #212121;
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (max-width:600px){
+    h1 {
+      font-size: 25px;
+      line-height: 40px
+    }
+}
+
+content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 94%;
+  height: calc(100% - 200px);
+  padding: 3%;
+  position: relative;
+}
+
+content block {
+  background-color: #e9e6e6;
+  width: 48%;
+  height: auto;
+  margin-bottom: 2%;
+}
+
+content block:nth-child(3n) {
+  width: 100%;
+}
+
+content block top {
+  width: 100%;
+  height: 40px;
+  background-color: #171717;
+  color: white;
+  display: block;
+}
+
+content block block-main {
+  height: auto;
+  width: 100%;
+  display: block;
+  overflow: auto;
+}
+
+content block block-main table {
+  width: 98%;
+  margin: auto;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.table-loader {
+  width: calc(100% - 5px);
+  height: 14px;
+  border-radius: 3px;
+  animation-duration: 2.8s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: #d9d9d9;
+  background: linear-gradient(to right, #d9d9d9 8%, #ededed 38%, #d9d9d9 54%);
+  display: inline-block;
+  min-width: 15px;
+  background-size: 1000px 640px;
+}
+
+content block top a {
+  margin: 0px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+content block top a:hover {
+  color: white;
+}
+
+@media only screen and (max-width: 900px) {
+  content block {
+    width: 100%;
+  }
+}
+
+@keyframes shine-lines-table {
+  0% {
+	opacity:0.4;
+  }
+  40%{
+	opacity:0.8;
+  }
+  100% {
+	opacity:0.4;
+  }
+}
+
+@keyframes placeHolderShimmer{
+    0%{
+        background-position: -600px 0
+    }
+    100%{
+        background-position: 468px 0
+    }
+}
+
+.table-label {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  color: grey;
+}
+
+.red {
+  background-color: #fd9696;
+}
+.blue {
+  background-color: #acacfb;
+}
+
+.blue a, .red a {
+  color: #1e00ff;
+}
+
+tr:nth-child(even) .blue{
+  background-color: #8686f9 !important;
+}
+
+tr:nth-child(even) .red{
+  background-color: #f56b6b !important;
+}
+
+.red {
+  background-color: #fd9696;
+}
+.blue {
+  background-color: #acacfb;
+}
+
+.blue a, .red a {
+  color: #1e00ff;
+}
+
+tr:nth-child(even) .blue{
+  background-color: #8686f9 !important;
+}
+
+tr:nth-child(even) .red{
+  background-color: #f56b6b !important;
+}

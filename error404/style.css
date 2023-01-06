@@ -1,0 +1,31 @@
+header {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  text-align: center;
+  background-color: #7373ab;
+  background-image: url('../images/arena.jpg');
+  background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center;
+}
+
+header h1 {
+  color: white;
+  font-size: 70px;
+  line-height: 100px;
+  height: 100px;
+  width: 500px;
+  margin: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: #212121;
+}
+
+@media (max-width:600px){
+    header h1 {
+      width: 80%;
+      font-size: 30px;
+      height: 80px;
+      line-height: 80px
+    }
+}

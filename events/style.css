@@ -1,0 +1,48 @@
+main {
+  margin-top: 0px;
+  position: relative;
+}
+
+header {
+  padding: 50px;
+}
+
+h1 {
+  color: white;
+  font-size: 70px;
+  line-height: 100px;
+  height: 100px;
+  width: 500px;
+  margin: auto;
+  text-align: center;
+  background-color: #212121;
+  position: relative;
+  display: block;
+}
+
+@media (max-width:600px){
+    h1 {
+      width: 80%;
+      font-size: 30px;
+      height: 80px;
+      line-height: 80px
+    }
+}
+
+results {
+  width: 80%;
+  display: block;
+  height: auto;
+  background-color: #f5f3f3;
+  padding: 10%;
+  position: relative;
+  padding-top: 0px;
+  min-height: 200px;
+  z-index: 1;
+}
+
+results table {
+  width: 100%;
+  margin: 0px;
+  border-spacing: 0px;
+}

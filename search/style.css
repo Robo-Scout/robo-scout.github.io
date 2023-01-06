@@ -1,0 +1,95 @@
+main {
+  margin-top: 0px;
+}
+
+header {
+  padding: 50px;
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  font-size: 70px;
+  line-height: 100px;
+  margin: auto;
+  text-align: center;
+  background-color: #212121;
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (max-width:600px){
+    h1 {
+      width: 80%;
+      font-size: 30px;
+      line-height: 80px
+    }
+}
+
+results {
+  padding: 0px;
+  width: 100vw;
+}
+
+results ul {
+  list-style: none;
+  width: 90vw;
+  margin: 0px;
+  padding: 5%
+}
+
+results a {
+  margin: auto;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: 0.2s;
+}
+
+results a:hover {
+  text-decoration: underline;
+}
+
+#results li a {
+  font-size: 20px;
+  margin: none;
+  text-align: left;
+}
+
+results h2 {
+  display: block;
+  text-align: center;
+}
+
+selector {
+  display: block;
+  margin: auto;
+  text-align: center;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 15px;
+  height: 30px;
+}
+
+selector button {
+  font-size: 20px;
+  border: none;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0px;
+  float: left;
+}
+
+selector button:enabled {
+  cursor: pointer;
+  background-color: #d1d1d1;
+}
+
+selector button:disabled {
+  color: white;
+  background-color: #3399FF;
+}

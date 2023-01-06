@@ -1,0 +1,109 @@
+main {
+  margin-top: 0px;
+  position: relative;
+}
+header {
+  padding: 50px;
+}
+
+h1 {
+  color: white;
+  font-size: 50px;
+  line-height: 100px;
+  height: 100px;
+  width: 600px;
+  margin: auto;
+  text-align: center;
+  background-color: #212121;
+  position: relative;
+  display: block;
+}
+
+@media (max-width:600px){
+   h1 {
+      width: 80%;
+      font-size: 30px;
+      height: 80px;
+      line-height: 80px
+    }
+}
+
+  results {
+    width: 80%;
+    display: block;
+    height: auto;
+    background-color: #f5f3f3;
+    padding: 10%;
+    position: relative;
+    min-height: 200px;
+    z-index: 1;
+    padding-top: 50px;
+  }
+
+results h2 {
+  text-align: center;
+}
+  
+  results table {
+    width: 100%;
+    margin: 0px;
+    border-spacing: 0px;
+  }
+
+selector {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+selector select {
+  padding: 3px;
+  border-radius: 10px;
+  border-width: 2px;
+}
+
+selector select:focus {
+  border-color: #3399FF;
+  outline: none;
+}
+
+selector label {
+  font-weight: bold;
+}
+
+@keyframes shine-lines-table {
+  0% {
+	opacity:0.4;
+  }
+  40%{
+	opacity:0.8;
+  }
+  100% {
+	opacity:0.4;
+  }
+}
+
+@keyframes placeHolderShimmer{
+    0%{
+        background-position: -600px 0
+    }
+    100%{
+        background-position: 468px 0
+    }
+}
+
+.table-loader {
+  width: calc(100% - 5px);
+  height: 20px;
+  border-radius: 3px;
+  animation-duration: 2.8s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: #d9d9d9;
+  background: linear-gradient(to right, #d9d9d9 8%, #ededed 38%, #d9d9d9 54%);
+  display: inline-block;
+  min-width: 15px;
+  background-size: 1000px 640px;
+}
