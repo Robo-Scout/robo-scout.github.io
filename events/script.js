@@ -29,6 +29,10 @@ xhr.onload = function() {
   let data = xhr.response.data.eventsBetween.sort(
   (objA, objB) => Number(new Date(objA.start)) - Number(new Date(objB.start)),
 );
+
+  //Remove any events before the now timestamp. This has to be used due to an issue with The Red Alliance API scraping the RobotEvents Api and recieving events that may be ongoing, not have an end date, or cancelled. This issue could be due to any of these, and has not yet been fixed.
+  data = data.filter(e => now - new Date(e.start) < 0);
+
   let html = `
   <table>
     <tr>

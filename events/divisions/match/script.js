@@ -62,7 +62,7 @@ xhr.onload = function() {
           <th>Event</th><td><a href='/events/view/index.html?e=${data.event.id}'>${data.event.name}</a></td>
         </tr>
         <tr>
-          <th>Divison</th><td><a href='/events/divisions/index.html?e=${data.division.id}'>${data.division.name}</a></td>
+          <th>Divison</th><td><a href='/events/divisions/index.html?d=${data.division.id}&&e=${data.event.id}'>${data.division.name}</a></td>
         </tr>
       </tbody>
     `;

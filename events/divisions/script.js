@@ -4,7 +4,7 @@ let division = params.get('d');
 let event = params.get('e');
 
 if(event && !division){
-  window.location.href = 'events/view/index.html?e=' + event;
+  window.location.href = '/events/view/index.html?e=' + event;
 }
 else if(!event || !division){
   location.href='/home'

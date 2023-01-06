@@ -2,10 +2,10 @@ header {
   padding-top: 150px;
   padding-bottom: 150px;
   text-align: center;
-  background-color: #7373ab;
+  background-color: #f1f1f1;
   background-image: url('../images/arena.jpg');
-  background-size:     cover;                      /* <------ */
-  background-repeat:   no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center center;
 }
 

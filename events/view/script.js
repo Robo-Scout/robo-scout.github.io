@@ -68,7 +68,7 @@ xhr.onload = function() {
         </tr>
         <tr>
           <th>Season</th>
-          <td><a href='/seasons/view/index.html?s=${data.eventById.season.id}'>${data.eventById.season.name}</a></td>
+          <td><a href='/seasons/skills/index.html?s=${data.eventById.season.id}'>${data.eventById.season.name}</a></td>
         </tr>
         <tr>
           <th>Date</th>
@@ -86,7 +86,7 @@ xhr.onload = function() {
 
   html ='<tbody><tr><th>Number</th><th>Name</th><th>Organization</th></tr>'
   for(i=0; i<data.teamsByEvent.length; i++){
-    html += `<tr><td>${data.teamsByEvent[i].number}</td><td><a href='/events/divisions/index.html?e=${id}&d=${data.teamsByEvent[i].id}'>${data.teamsByEvent[i].teamName}</a></td><td>${data.teamsByEvent[i].organization}</td></tr>`
+    html += `<tr><td>${data.teamsByEvent[i].number}</td><td><a href='/teams/view/index.html?t=${data.teamsByEvent[i].id}'>${data.teamsByEvent[i].teamName}</a></td><td>${data.teamsByEvent[i].organization}</td></tr>`
   }
   html += `</tbody>`;
   document.getElementById('block3table').innerHTML = html;
