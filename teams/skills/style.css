@@ -39,6 +39,7 @@ main {
     min-height: 200px;
     z-index: 1;
     padding-top: 50px;
+    overflow: scroll;
   }
 
 results h2 {

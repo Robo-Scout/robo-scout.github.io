@@ -40,7 +40,7 @@
 
 <body>
   <nav>
-    <a href='../home/index.html' class="logo">
+    <a href='/home/index.html' class="logo">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px" height="50px"
         viewBox="0 0 50 50" version="1.1">
         <g id="surface1">
@@ -75,7 +75,7 @@
     <a href="/events">Events</a>
     <a href="/seasons">Seasons</a>
     <div id='search'><input type='text' placeholder='Search' id='navSearch'><span class="focus-border"></span></div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class='icon'>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class='icon search' >
       <defs>
         <style>
           .cls-1 {
@@ -90,6 +90,9 @@
         </g>
       </g>
     </svg>
+            <a href="javascript:void(0);" class="icon bars" onclick="toggleNav()">
+    <i class="fa fa-bars"></i>
+  </a>
   </nav>
   <main>
     <ul class="circles">
@@ -115,6 +118,7 @@
     <p class="center">©2022 Luke McCrea</p>
   </footer>
   <script src="script.js"></script>
+  <script src="/globalscripts.js"></script>
   </script>
 </body>
 

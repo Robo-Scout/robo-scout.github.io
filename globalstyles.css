@@ -1,3 +1,5 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+
 body {
   width: 100%;
   margin: 0px;
@@ -221,10 +223,14 @@ tr:nth-child(even) {
 
 .bars {
   display: none;
-  height: 50px;
-  width: 50px;
-  float: right;
-  margin: 0px;
+  width: 20px;
+  height: 30px !important;
+  margin: 10px !important;
+  line-height: 30px;
+}
+
+.bars:hover {
+  border: none;
 }
 
 /* Safari */
@@ -244,17 +250,54 @@ tr:nth-child(even) {
     display: inline-block;
     text-align: left;
   }
-  nav a:not(:first-child) {display: none;}
+  nav a:not(:first-child) {
+    display: none;
+  }
+
+  nav.responsive a:not(:first-child) {
+    display: block;
+  }
+
+  nav.responsive {
+    height: auto;
+  }
+
+  nav a:not(.active) {
+    border: none !important;
+  }
+  
   nav a.active {
     display: inline-block;
   }
   nav a.icon {
     display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  nav a.logo p {
+    display: none;
+  }
+  nav.responsive a.logo {
+    float: none;
+  }
+  nav.responsive a.active {
+    border: none;
+    color: #3399FF;
+  }
+  nav.responsive #search, nav.responsive .search {
+    display: none;
+  }
+  nav #search {
+    margin-right: 50px;
   }
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 430px) {
   #search {
+    display: none;
+  }
+  .search {
     display: none;
   }
 }
