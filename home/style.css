@@ -186,7 +186,7 @@ header h1 {
 
   100%{
       transform: translateY(-1000px) rotate(720deg);
-      opacity: 0;
+      opacity: 0.3;
       border-radius: 50%;
   }
 
