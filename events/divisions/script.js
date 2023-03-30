@@ -112,7 +112,7 @@ xhr.send(JSON.stringify(query));
 const navSearch = document.getElementById('navSearch');
 
 function search(i) {
-	let query = i.value;
+	let query = i.value.replace(/[^A-Za-z0-9]/g, "");
 	if (query.trim().length != 0) {
 		window.location.href = '/search/index.html?i=' + encodeURIComponent(query);
 	}
